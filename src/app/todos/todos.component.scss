@@ -1,0 +1,80 @@
+.todos-wrapper{
+    height: 100%;
+   overflow-y: auto;            //any overflow will be scrollable
+}
+// styling todo item
+.todo-item {
+    // make both icon and text on same line
+    display: flex;
+    //centering the text
+    align-items: center;
+
+    background-color: rgba($color: black, $alpha: 0.8);
+    border-radius: 25px;                    //pick smallest numbers to have single todo items completely rounded
+
+    padding: 10px 12px;                          //puts padding around the text inside the container  top/bottom, left/right
+    margin-bottom: 15px;
+
+    //makes todo items clickable
+    cursor: pointer; 
+
+}
+
+.todo-text {
+    color: rgba($color: white, $alpha: 0.85);
+
+}
+
+.check-box {
+
+    display: flex;      //makes the checkbox's more circular
+    padding: 4px;
+    //setting border of checkbox
+    border: 2px solid  rgba($color: white, $alpha: 0.35);
+
+    // make the box round
+    border-radius: 50%;
+    //space between checkbox and text
+    margin-right: 15px;
+    
+    //icon
+    i {
+        font-size: 18px;
+        //makes so checkmark is hidden
+        opacity: 0;     
+    }
+}
+
+.todo-item:hover {
+    .todo-text{
+        color: rgba($color: white, $alpha: 0.95);
+    }
+
+    .check-box {
+       //when hover over check box or text, will change color to white
+            border-color: transparent;
+            background-color: rgba($color: white, $alpha: 0.35);
+        
+    }
+}
+
+.todo-item.completed {
+    .todo-text{
+        color: rgba($color: white, $alpha: 0.78);
+    }
+    .check-box{
+        background: rgb(9, 218, 89);
+        //makes border of checkbox hidden
+        border-color: transparent;
+
+        i{
+            opacity: 1;
+        }
+
+    }
+}
+
+.todo-text,
+.check-box{
+    transition: 0.12s;
+}

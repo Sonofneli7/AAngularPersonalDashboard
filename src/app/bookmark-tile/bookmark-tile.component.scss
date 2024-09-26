@@ -1,0 +1,49 @@
+.bookmark-tile{
+    display: flex;
+    //changes the <p> to appear under the img
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;  //adds paddding all around img & text w/in bookmark tile
+
+    gap: 12px;      // provide gap b/t img and title
+
+    background: rgba($color:black, $alpha: 0.55); 
+    border-radius: 5px;
+
+    width: 110px;
+    height: 105px;
+
+    //tile looks clickable
+    cursor: pointer;
+
+    transition: all 0.1s;
+    
+    //adding hover effects on tile
+    &:hover{
+        background: rgba($color: black, $alpha: 0.8);
+        backdrop-filter: blur(2px);
+    }
+    &:active {
+        background: rgba($color: black, $alpha: 0.75);
+        transform: translateY(2px);
+        transition-duration: 0s;
+    }
+}
+
+.bookmark-tile img{
+    //adjust the image within the tile to match
+    max-width: 32px;
+}
+
+.tile-text{
+    font-size: 14px;
+    color: rgba($color: white, $alpha: 0.5);
+
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    //truncates the text and adds ... at end
+    text-overflow: ellipsis;
+}
